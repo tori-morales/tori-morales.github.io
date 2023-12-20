@@ -1,16 +1,16 @@
 import { useState } from "react";
 
-export default function App() {
+export default function Webpage() {
   const [open, setOpen] = useState("");
   return (
     <div className="wrapper">
       <OrbitSystem isLeft={open} />
       <Intro isHidden={!open} />
-      <Menu open={open} setOpen={setOpen}></Menu>
+      <Menu open={open} setOpen={setOpen} />
       <ClipShow open={open} />
       <DataPanel open={open} />
-      <Resume open={open}></Resume>
-      <Credit open={open} isOpen={!open}></Credit>
+      <Resume open={open} />
+      <Credit open={open} isOpen={!open} />
     </div>
   );
 }
@@ -22,7 +22,26 @@ function Resume({ open }) {
         <h3>Experience</h3>
         <div className="details">
           <div className="item">
-            <h4>Washington Square News - Jan. 2022 - Present</h4>
+            <h4>CNN - Oct. 2023 - Dec. 2023</h4>
+            <em>Data and Graphics Intern</em>
+            <ul>
+              <li>
+                Created graphics to support digital teams on breaking and
+                long-term coverage
+              </li>
+
+              <li>
+                Compiled unique datasets from government sources, research
+                publications and previous coverage
+              </li>
+              <li>
+                Identified high-interest topics to deliver responsive visuals
+                content
+              </li>
+            </ul>
+          </div>{" "}
+          <div className="item">
+            <h4>Washington Square News - Jan. 2022 - Dec. 2023</h4>
             <em>
               Editor at Large | Deputy Managing Editor | News Editor | Copy
               Editor
@@ -116,6 +135,68 @@ function DataPanel({ open }) {
     >
       <DataItem
         commentary={
+          "This visualization shows buildings owned by NYU, as found in New York City's Primary Land Use Tax Lot Output and combined with city-level building footprint data for visualization. This data was obtained using the Sodapy module for Python and New York City's Open Data Portal API. The visualization was made using MapboxGL JS."
+        }
+        pub_name={
+          "Washington Square News: New bill could cost NYU over $100 million in annual tax cuts"
+        }
+        pub_link={
+          "https://nyunews.com/news/2023/12/14/city-could-remove-nyu-tax-exemption-status/"
+        }
+        tech={[
+          { name: "Python", color: "#7478c2" },
+          { name: "MapboxJS", color: "#D79743" },
+          { name: "HTML/CSS/JS", color: "#ad42f5" },
+        ]}
+        techClass="vertical"
+      >
+        <div>
+          <iframe
+            title="NYU Buildings Demo"
+            src="https://wsn-tori.github.io/NYU-building/"
+            style={{
+              border: "none",
+              overflow: "hide",
+              margin: "0",
+              padding: "0",
+            }}
+            data-external="1"
+          ></iframe>
+        </div>
+      </DataItem>
+      <DataItem
+        commentary={
+          "These articles are from my time as an intern with CNN's Data and Graphics desk. I used a mix of Python and Excel to clean and analyze data, and then used Datawrapper to create visualizations."
+        }
+        techClass="vertical"
+        tech={[
+          { name: "Python", color: "#7478c2" },
+          { name: "Excel", color: "#48ab62" },
+          { name: "Datawrapper", color: "#7a7a7a" },
+        ]}
+      >
+        <p>
+          <a>CNN:</a> <br />
+          <ul className="cnn">
+            <li>
+              <a href="https://www.cnn.com/2023/10/29/us/hate-crimes-antisemitism-anti-muslim-dg/index.html">
+                How reports of hate crimes in the US were already at record
+                highs, in 4 charts
+              </a>{" "}
+              <a>&</a>
+              <br />
+            </li>
+            <li>
+              <a href="https://www.cnn.com/2023/12/19/business/artificial-christmas-tree-vs-real-dg/index.html">
+                Christmas trees have gotten a lot less real in recent decades,
+                in charts
+              </a>
+            </li>
+          </ul>
+        </p>
+      </DataItem>
+      <DataItem
+        commentary={
           "These visualizations were created as part of POLITICO's Journalism Institute alongside fellow student Olivia Gyapong and data editor Sean McMinn. The initial idea came from an article I had read about areas lacking maternal care providers, and we were interested in exploring how this shortage intersected with rising rates of abortion deserts in the  wake of Dobbs v. Jackson Women's Health Clinic."
         }
         tech={[
@@ -151,51 +232,23 @@ function DataPanel({ open }) {
           data-external="1"
         ></iframe>
       </DataItem>
-      <DataItem
-        commentary={
-          "This early-stage visualization shows buildings owned by NYU, as found in New York City's Primary Land Use Tax Lot Output and combined with city-level building footprint data for visualization. This data was obtained using the Sodapy module for Python and New York City's Open Data Portal API. The visualization was made using MapboxGL JS, a library for creating for 3D interactive vector maps. I am working on adding historical data for comparison as well as the footprint of other local universities."
-        }
-        tech={[
-          { name: "Python", color: "#7478c2" },
-          { name: "MapboxJS", color: "#D79743" },
-          { name: "HTML/CSS/JS", color: "#ad42f5" },
-        ]}
-        techClass="vertical"
-      >
-        <div>
-          <iframe
-            title="NYU Buildings Demo"
-            src="https://5m6xxs-8080.csb.app/"
-            style={{
-              border: "none",
-              overflow: "hide",
-              margin: "0",
-              padding: "0",
-            }}
-            data-external="1"
-          ></iframe>
-          <p style={{ fontSize: ".7rem" }}>
-            Visualization code available{" "}
-            <a
-              style={{ fontSize: ".7rem" }}
-              href="https://codesandbox.io/p/sandbox/nyubuildings-demo-v1-5m6xxs?file=%2Fsrc%2Findex.html%3A1%2C1"
-              target="blank_"
-            >
-              here
-            </a>
-            .
-          </p>
-        </div>
-      </DataItem>
     </div>
   );
 }
 
-function DataItem({ children, tech, commentary, techClass = "" }) {
+function DataItem({
+  children,
+  tech,
+  pub_link,
+  pub_name,
+  commentary,
+  techClass = "",
+}) {
   return (
     <div className={`item ${techClass}`}>
       {children}
       <div className={`info ${techClass}`}>
+        {pub_name ? <a href={pub_link}>{pub_name}</a> : <></>}
         <ul className={`skills ${techClass}`}>
           {tech.map((item) => {
             return (
@@ -220,13 +273,13 @@ const articles = [
     name: "Washington Square News",
     articles: [
       {
+        title: "Nursing union accuses NYU Langone of understaffing",
+        link: "https://nyunews.com/news/2023/09/12/nyu-langone-understaffing/",
+      },
+      {
         title:
           "NYC nail salon advocates frustrated by state gov’t safety delays",
         link: "https://nyunews.com/news/2022/05/03/safety-delays-frustrate-nail-technicians/",
-      },
-      {
-        title: "Hochul and Zeldin face off in governor’s debate",
-        link: "https://nyunews.com/news/2022/10/26/hochul-zeldin-governors-debate-race/",
       },
       {
         title: "New School cuts pay for part-time faculty on strike",
@@ -321,20 +374,38 @@ function Menu({ open, setOpen }) {
       <MenuItem isOpen={open === "Resume"} setOpen={setOpen}>
         Resume
       </MenuItem>
+      <MenuItem isOpen={false} setOpen={setOpen} override={true}>
+        <li className={`menuItem`}>
+          <button
+            className={"notSelected"}
+            onClick={() => {
+              window.location = "./podcast";
+            }}
+          >
+            Podcast
+          </button>
+        </li>
+      </MenuItem>
     </ul>
   );
 }
 
-function MenuItem({ isOpen, setOpen, children }) {
+function MenuItem({ isOpen, setOpen, children, override }) {
   return (
-    <li className={`menuItem`}>
-      <button
-        className={`item ${isOpen ? "selected" : "notSelected"}`}
-        onClick={() => setOpen(children === "Back" ? "" : children)}
-      >
-        {children}
-      </button>
-    </li>
+    <>
+      {override ? (
+        children
+      ) : (
+        <li className={`menuItem`}>
+          <button
+            className={`item ${isOpen ? "selected" : "notSelected"}`}
+            onClick={() => setOpen(children === "Back" ? "" : children)}
+          >
+            {children}
+          </button>
+        </li>
+      )}
+    </>
   );
 }
 
