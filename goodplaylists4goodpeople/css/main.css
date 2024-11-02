@@ -157,6 +157,12 @@ button {
   border-radius: 5px;
   color: rgb(227, 227, 227);
 }
+#search input ::-moz-placeholder {
+  color: rgb(80, 80, 80);
+}
+#search input ::placeholder {
+  color: rgb(80, 80, 80);
+}
 #search > div {
   margin: 0.125em;
   box-sizing: border-box;

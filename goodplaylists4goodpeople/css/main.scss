@@ -152,6 +152,10 @@ button {
     font-size: 0.8em;
     border-radius: 5px;
     color: rgb(227, 227, 227);
+
+    ::placeholder {
+      color: rgb(80, 80, 80);
+    }
   }
   & > div {
     margin: 0.125em;
