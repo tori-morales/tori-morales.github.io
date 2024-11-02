@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  max-height: 100vh;
+}
+
+li {
+  opacity: 0.8;
+}
+
+body {
+  background: radial-gradient(
+    circle at 20px 30px,
+    rgba(0, 105, 150, 0.8) 9%,
+    rgba(62, 153, 62, 0.7) 100%
+  );
+}
+
+#topBar {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  padding-top: 2em;
+  color: rgba(255, 255, 255, 0.767);
+  mix-blend-mode: overlay;
+  text-shadow: rgb(7, 74, 62) 1px 1px 15px;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+button {
+  margin: 0;
+  padding: 0.5em;
+  font-size: 1.2em;
+  max-width: 8em;
+  background-color: rgb(85, 138, 223);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  mix-blend-mode: overlay;
+  a:visited {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+button:hover {
+  background-color: white;
+  text-decoration: underline;
+  color: black;
+  a:visited {
+    color: black;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #topBar {
+    font-size: 0.8em;
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    mix-blend-mode: overlay;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  button {
+    margin: 2em;
+  }
+}
