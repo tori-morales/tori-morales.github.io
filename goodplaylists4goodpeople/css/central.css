@@ -35,6 +35,11 @@ h2 {
   font-size: 2.5em;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 button {
   margin: 0;
   padding: 0.5em;
@@ -46,21 +51,13 @@ button {
   color: white;
   mix-blend-mode: overlay;
   a:visited {
-    color: rgb(255, 255, 255);
     text-decoration: none;
-  }
-  a {
-    text-decoration: none;
-    color: white;
   }
 }
+
 button:hover {
-  background-color: white;
   text-decoration: underline;
-  color: black;
-  a:visited {
-    color: black;
-  }
+  background-color: rgba(255, 73, 179, 0.622);
 }
 
 @media screen and (max-width: 500px) {

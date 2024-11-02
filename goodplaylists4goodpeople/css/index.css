@@ -37,7 +37,6 @@ body {
   max-width: 8em;
 }
 
-
 #intro {
   margin: 3em;
   display: flex;
@@ -49,9 +48,6 @@ body {
 
   /* mix-blend-mode: overlay;
   opacity: 0.75; */
-
-  mix-blend-mode: multiply;
-  color: rgba(25, 20, 110, 0.752);
 }
 
 li {
@@ -83,7 +79,6 @@ ul {
     text-align: left;
   }
 
-
   #getAuth {
     margin: 2em;
   }
@@ -95,7 +90,6 @@ ul {
 }
 
 button {
-  background-color: rgb(85, 138, 223);
   border: none;
   border-radius: 5px;
   mix-blend-mode: overlay;
@@ -106,12 +100,5 @@ button {
   }
   a {
     text-decoration: none;
-  }
-}
-button:hover {
-  background-color: white;
-  text-decoration: underline;
-  a:visited {
-    color: black;
   }
 }
