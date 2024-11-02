@@ -380,7 +380,7 @@ displayResults = (results, handleClick, createEl) => {
 };
 
 getGenres = async () => {
-  fetch("/data/genres.json")
+  fetch("/goodplaylists4goodpeople/data/genres.json")
     .then((response) => response.json())
     .then((json) => {
       genres = json.genres;
