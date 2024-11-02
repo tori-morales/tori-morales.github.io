@@ -2,16 +2,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  max-height: 100vh;
+  max-height: 100dvh;
 }
 
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
 }
 
 #wrapper {
@@ -21,7 +21,7 @@ body {
   flex-flow: column nowrap;
   height: -moz-fit-content;
   height: fit-content;
-  height: 100vh;
+  height: 100dvh;
   align-items: center;
 }
 
