@@ -3,7 +3,7 @@ let clientID = "c7a0a0fdb02f4c229de61d2d6431effa";
 let code = urlParams.get("code");
 const tokenEndpoint = "https://accounts.spotify.com/api/token";
 let redirectStr =
-  "https://tori-morales.github.io/goodplaylists4goodpeople/success";  
+  "https://tori-morales.github.io/goodplaylists4goodpeople/success";
 const getToken = async (code) => {
   // stored in the previous step
   let codeVerifier = localStorage.getItem("code_verifier");
