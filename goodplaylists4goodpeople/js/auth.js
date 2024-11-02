@@ -1,6 +1,6 @@
 let display = document.getElementById("display");
 let clientID = "c7a0a0fdb02f4c229de61d2d6431effa";
-let redirect = "http://localhost:8888";
+let redirect = "https://tori-morales.github.io/goodplaylists4goodpeople";
 let possibleChars = [];
 
 const generateRandomString = (length) => {
@@ -36,7 +36,8 @@ let func = async () => {
   // });
 };
 
-let redirectStr = "http://127.0.0.1:5500/token";
+let redirectStr =
+  "https://tori-morales.github.io/goodplaylists4goodpeople/token";
 let getUrl = "https://accounts.spotify.com/login/";
 const authURL = new URL("https://accounts.spotify.com/authorize");
 
