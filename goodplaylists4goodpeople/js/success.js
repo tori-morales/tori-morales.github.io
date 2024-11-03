@@ -221,6 +221,7 @@ addToLibrary = async (tracks) => {
   }
   let res = req.json();
   res.then(async (body) => {
+    let playlist_uri = body.external_urls.spotify;
     let playlistId = body.id;
     let uris = [];
     tracks.forEach((track) => {
@@ -250,7 +251,7 @@ addToLibrary = async (tracks) => {
       });
       loadingEl = document.createElement("li");
       loadingEl.id = "loadingText";
-      loadingEl.innerHTML = "Added to library. Enjoy :D";
+      loadingEl.innerHTML = `Added to library. <a href="${playlist_uri}" target="_blank">Enjoy :D</a>`;
       resDisplay.appendChild(loadingEl);
     });
   });
