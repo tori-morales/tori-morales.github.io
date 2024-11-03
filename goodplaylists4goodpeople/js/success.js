@@ -485,7 +485,7 @@ setUpSelectNext = (stepEl) => {
   let selectCount = document.createElement("select");
   selectCount.name = "numSongs";
   selectCount.id = "numSongs";
-  let options = [20, 30, 40, 50, 60, 70, 80, 90];
+  let options = [15, 20, 25, 30, 35, 40, 45, 50];
   options.forEach((option) => {
     let tempEl = document.createElement("option");
     tempEl.name = option;
