@@ -25,6 +25,10 @@ body {
   align-items: center;
 }
 
+#playlistURL {
+  color: lightpink;
+}
+
 li {
   list-style: none;
 }
