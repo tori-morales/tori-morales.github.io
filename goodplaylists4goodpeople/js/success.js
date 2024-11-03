@@ -14,8 +14,7 @@ let limit = 20;
 let profileId = "";
 
 redirect = () => {
-  window.location.href = "/goodplaylists4goodpeople";
-  localStorage.setItem("issue", true);
+  window.location.href = "/goodplaylists4goodpeople/failed";
 };
 
 getUserInfo = async () => {
