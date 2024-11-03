@@ -251,7 +251,7 @@ addToLibrary = async (tracks) => {
       });
       loadingEl = document.createElement("li");
       loadingEl.id = "loadingText";
-      loadingEl.innerHTML = `Added to library. <a href="${playlist_uri}" target="_blank">Enjoy :D</a>`;
+      loadingEl.innerHTML = `Added to library. <a id="playlistURL" href="${playlist_uri}" target="_blank">Enjoy :D</a>`;
       resDisplay.appendChild(loadingEl);
     });
   });
